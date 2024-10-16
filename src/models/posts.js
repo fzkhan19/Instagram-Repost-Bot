@@ -1,27 +1,28 @@
-const  mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
 const travelSchema = new mongoose.Schema(
-    {
-     type: {
-        type: String,
-      },
-     likes: {
-        type: Number,
-      },
-     comments: {
-        type: Number,
-      },
-     links: [],
-     caption: {
-        type: String,
-      },
+	{
+		type: {
+			type: String,
+		},
+		likes: {
+			type: Number,
+		},
+		comments: {
+			type: Number,
+		},
+		links: [],
+		caption: {
+			type: String,
+		},
+		reposted: {
+			type: Boolean,
+			default: false, // New posts are not reposted by default
+		},
+	},
+	{
+		timestamps: true,
+	},
+);
 
-    },
-    {
-      timestamps: true,
-    }
-  )
-
-
-
-module.exports = mongoose.model('Posts', travelSchema)
+module.exports = mongoose.model("Posts", travelSchema);
